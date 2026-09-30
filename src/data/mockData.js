@@ -4,18 +4,20 @@
 // pour limiter les changements le jour de la bascule.
 
 export const SPECIALTIES = [
-  { id: 'generale', fr: 'Médecine générale', en: 'General medicine' },
-  { id: 'cardio', fr: 'Cardiologie', en: 'Cardiology' },
-  { id: 'gyneco', fr: 'Gynécologie-Obstétrique', en: 'Obstetrics & Gynecology' },
-  { id: 'pediatrie', fr: 'Pédiatrie', en: 'Pediatrics' },
-  { id: 'dermato', fr: 'Dermatologie', en: 'Dermatology' },
-  { id: 'endocrino', fr: 'Endocrinologie', en: 'Endocrinology' },
-  { id: 'pneumo', fr: 'Pneumologie', en: 'Pulmonology' },
-  { id: 'rhumato', fr: 'Rhumatologie', en: 'Rheumatology' },
-  { id: 'ophtalmo', fr: 'Ophtalmologie', en: 'Ophthalmology' },
-  { id: 'psy', fr: 'Santé mentale', en: 'Mental health' },
-  { id: 'labo', fr: 'Analyses à domicile', en: 'Home lab tests' },
+  { id: 'generale', fr: 'Médecine générale', en: 'General medicine', icon: '🩺' },
+  { id: 'cardio', fr: 'Cardiologie', en: 'Cardiology', icon: '❤️' },
+  { id: 'gyneco', fr: 'Gynécologie-Obstétrique', en: 'Obstetrics & Gynecology', icon: '🤰' },
+  { id: 'pediatrie', fr: 'Pédiatrie', en: 'Pediatrics', icon: '🧒' },
+  { id: 'dermato', fr: 'Dermatologie', en: 'Dermatology', icon: '🧴' },
+  { id: 'endocrino', fr: 'Endocrinologie', en: 'Endocrinology', icon: '⚕️' },
+  { id: 'pneumo', fr: 'Pneumologie', en: 'Pulmonology', icon: '🫁' },
+  { id: 'rhumato', fr: 'Rhumatologie', en: 'Rheumatology', icon: '🦴' },
+  { id: 'ophtalmo', fr: 'Ophtalmologie', en: 'Ophthalmology', icon: '👁️' },
+  { id: 'psy', fr: 'Santé mentale', en: 'Mental health', icon: '🧠' },
+  { id: 'labo', fr: 'Analyses à domicile', en: 'Home lab tests', icon: '🧪' },
 ];
+
+export const CITIES = ['Garoua', 'Yaoundé', 'Douala', 'Maroua', 'Ngaoundéré'];
 
 // La "passerelle" symptôme → spécialité demandée dans le cahier des charges.
 // En V2/V3 cette table peut être remplacée par un service de triage plus riche

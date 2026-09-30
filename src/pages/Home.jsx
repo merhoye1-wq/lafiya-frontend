@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useApp } from '../state/AppContext';
 import { SPECIALTIES, specName } from '../data/mockData';
 import { fetchDoctors } from '../services/api';
+import SearchBar from '../components/SearchBar';
 
 export default function Home() {
   const { state, t } = useApp();
@@ -19,18 +20,45 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="eyebrow">{t('heroKicker')}</div>
-        <h1>{t('heroTitle')}</h1>
+        <h1>{t('heroSearchTitle')}</h1>
         <p className="lede">{t('heroSub')}</p>
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 20 }}>
-          <button className="btn btn-primary" onClick={() => navigate('/find')}>
-            {t('heroCta')}
-          </button>
-          <button
-            className="btn btn-ghost"
-            onClick={() => document.getElementById('how')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            {t('heroCta2')}
-          </button>
+        <div className="hero-search-wrap">
+          <SearchBar />
+        </div>
+        <div className="grid-3" style={{ marginTop: 28 }}>
+          <div className="card stat">
+            <span className="n mono">{t('stat1n')}</span>
+            <span className="l">{t('stat1l')}</span>
+          </div>
+          <div className="card stat">
+            <span className="n mono">{t('stat2n')}</span>
+            <span className="l">{t('stat2l')}</span>
+          </div>
+          <div className="card stat">
+            <span className="n mono">{t('stat3n')}</span>
+            <span className="l">{t('stat3l')}</span>
+          </div>
+        </div>
+      </section>
+
+      <hr className="hr" />
+
+      <section>
+        <div className="section-title">
+          <h2>{t('allSpecialties')}</h2>
+        </div>
+        <div className="grid-3">
+          {SPECIALTIES.map((s) => (
+            <button key={s.id} className="spec-card" onClick={() => navigate(`/find?specialty=${s.id}`)}>
+              <span className="spec-icon" aria-hidden="true">{s.icon}</span>
+              <span>
+                <span className="t" style={{ display: 'block' }}>{specName(s.id, state.lang)}</span>
+                <span className="s">
+                  {doctors.filter((d) => d.specialty === s.id).length} {state.lang === 'fr' ? 'médecin(s)' : 'doctor(s)'}
+                </span>
+              </span>
+            </button>
+          ))}
         </div>
       </section>
 
@@ -56,24 +84,6 @@ export default function Home() {
             <h3 style={{ margin: '8px 0 6px', fontSize: 15 }}>{t('step3t')}</h3>
             <p className="small">{t('step3s')}</p>
           </div>
-        </div>
-      </section>
-
-      <hr className="hr" />
-
-      <section>
-        <div className="section-title">
-          <h2>{t('allSpecialties')}</h2>
-        </div>
-        <div className="grid-3">
-          {SPECIALTIES.map((s) => (
-            <button key={s.id} className="chip" onClick={() => navigate(`/find?specialty=${s.id}`)}>
-              <span className="t">{specName(s.id, state.lang)}</span>
-              <span className="s">
-                {doctors.filter((d) => d.specialty === s.id).length} {state.lang === 'fr' ? 'médecin(s)' : 'doctor(s)'}
-              </span>
-            </button>
-          ))}
         </div>
       </section>
     </>
