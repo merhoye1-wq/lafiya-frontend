@@ -1,0 +1,84 @@
+/*
+  Design tokens — repris du prototype visuel (voir l'artefact "Lafiya Santé").
+  Palette : vert savane profond (confiance médicale) + ocre harmattan (chaleur, région du Grand Nord).
+  Les deux thèmes (clair/sombre) sont définis ici ; les composants ne doivent jamais
+  utiliser une couleur en dur — toujours une variable ci-dessous.
+*/
+:root {
+  --bg: #faf6ee;
+  --surface: #ffffff;
+  --surface-2: #f2ede1;
+  --ink: #20241f;
+  --ink-soft: #5b6259;
+  --ink-faint: #8b9086;
+  --primary: #1b4b43;
+  --primary-strong: #123832;
+  --primary-soft: #e3ece7;
+  --accent: #d98e3f;
+  --accent-strong: #b96f24;
+  --accent-soft: #f7e6cc;
+  --line: #e3dcc9;
+  --success: #3f8f5c;
+  --success-soft: #e1f0e6;
+  --warning: #c97a1a;
+  --warning-soft: #f8e9d2;
+  --critical: #b23a2e;
+  --critical-soft: #f7e1dd;
+  --video: #3e6fb0;
+  --video-soft: #e4ecf6;
+  --radius: 16px;
+  --shadow: 0 1px 2px rgba(20, 30, 25, 0.06), 0 6px 20px -8px rgba(20, 30, 25, 0.18);
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #141b17;
+    --surface: #1d2620;
+    --surface-2: #232c25;
+    --ink: #f1efe6;
+    --ink-soft: #b7beb2;
+    --ink-faint: #818a7f;
+    --primary: #7bcbb3;
+    --primary-strong: #9ad9c4;
+    --primary-soft: #213a33;
+    --accent: #e9ac63;
+    --accent-strong: #f1c089;
+    --accent-soft: #3b2c18;
+    --line: #333d34;
+    --success: #7acb92;
+    --success-soft: #1f3324;
+    --warning: #e3a24a;
+    --warning-soft: #3a2a14;
+    --critical: #e38176;
+    --critical-soft: #3b211d;
+    --video: #89abdd;
+    --video-soft: #1e2c3e;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #141b17;
+  --surface: #1d2620;
+  --surface-2: #232c25;
+  --ink: #f1efe6;
+  --ink-soft: #b7beb2;
+  --ink-faint: #818a7f;
+  --primary: #7bcbb3;
+  --primary-strong: #9ad9c4;
+  --primary-soft: #213a33;
+  --accent: #e9ac63;
+  --accent-strong: #f1c089;
+  --accent-soft: #3b2c18;
+  --line: #333d34;
+  --success: #7acb92;
+  --success-soft: #1f3324;
+  --warning: #e3a24a;
+  --warning-soft: #3a2a14;
+  --critical: #e38176;
+  --critical-soft: #3b211d;
+  --video: #89abdd;
+  --video-soft: #1e2c3e;
+}
